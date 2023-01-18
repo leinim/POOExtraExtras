@@ -112,47 +112,60 @@ public class Fecha {
 
     public void diaAnterior() {
         if (this.dia == 1) {
-            if (this.mes == 2 || this.mes == 4 || this.mes == 6 || this.mes == 8 || this.mes == 9 || this.mes == 11 || this.mes == 1) {
-                if (this.mes == 1) {
-                    System.out.println("Fecha de ayer: " + 31 + "/" + "12" + "/" + (this.ano - 1));
-                } else {
-                    System.out.println("Fecha de ayer: " + 31 + "/" + (this.mes - 1) + "/" + this.ano);
-                }
-            } else if (this.mes == 7 || this.mes == 10 || this.mes == 12) {
-                System.out.println("Fecha de ayer: " + 30 + "/" + (this.mes - 1) + "/" + this.ano);
-
-            } else if (this.mes == 5) {
-                System.out.println("Fecha de ayer: " + 29 + "/" + (this.mes - 1) + "/" + this.ano);
-            } else if (this.mes == 3) {
-                System.out.println("Fecha de ayer: " + 28 + "/" + (this.mes - 1) + "/" + this.ano);
+            switch (this.mes) {
+                case 2:
+                case 4:
+                case 6:
+                case 8:
+                case 9:
+                case 11:
+                case 1:
+                    if (this.mes == 1) {
+                        System.out.println("Fecha de ayer: " + 31 + "/" + "12" + "/" + (this.ano - 1));
+                    } else {
+                        System.out.println("Fecha de ayer: " + 31 + "/" + (this.mes - 1) + "/" + this.ano);
+                    }
+                    break;
+                case 7:
+                case 10:
+                case 12:
+                    System.out.println("Fecha de ayer: " + 30 + "/" + (this.mes - 1) + "/" + this.ano);
+                    break;
+                case 5:
+                    System.out.println("Fecha de ayer: " + 29 + "/" + (this.mes - 1) + "/" + this.ano);
+                    break;
+                case 3:
+                    System.out.println("Fecha de ayer: " + 28 + "/" + (this.mes - 1) + "/" + this.ano);
+                    break;
+                default:
+                    break;
             }
         } else {
-            System.out.println("Fecha de ayer: " + (this.dia - 1) + "/" + (this.mes - 1) + "/" + this.ano);
+            System.out.println("Fecha de ayer: " + (this.dia - 1) + "/" + this.mes + "/" + this.ano);
         }
 
     }
 
     public void diaPosterior() {
 
-        if (this.mes == 2 || this.mes == 4 || this.mes == 6 || this.mes == 9 || this.mes == 11 || this.mes == 12) {
-            if (this.dia == 31) {
+        if (this.dia == 31) {
+            if (this.mes == 2 || this.mes == 4 || this.mes == 6 || this.mes == 9 || this.mes == 11 || this.mes == 12) {
 
                 if (this.mes == 12) {
                     System.out.println("Fecha de mañana: " + "1" + "/" + "1" + "/" + (this.ano + 1));
                 } else {
                     System.out.println("Fecha de mañana: " + "1" + "/" + (this.mes + 1) + "/" + this.ano);
                 }
-            } else if (this.mes == 2 && this.dia == 28) {
-                System.out.println("Fecha de mañana: " + "31" + "/" + (this.mes + 1) + "/" + this.ano);
-
-            } else if (this.mes == 4 && this.dia == 29) {
-                System.out.println("Fecha de mañana: " + "31" + "/" + (this.mes + 1) + "/" + this.ano);
-            } else {
-                System.out.println("Fecha de mañana: " + (this.dia + 1) + "/" + this.mes + "/" + this.ano);
             }
+
         } else if ((this.mes == 6 || this.mes == 9 || this.mes == 11) && this.dia == 30) {
             System.out.println("Fecha de mañana: " + 1 + "/" + (this.mes + 1) + "/" + this.ano);
 
+        } else if (this.mes == 2 && this.dia == 28) {
+            System.out.println("Fecha de mañana: " + "1" + "/" + (this.mes + 1) + "/" + this.ano);
+
+        } else if (this.mes == 4 && this.dia == 29) {
+            System.out.println("Fecha de mañana: " + "1" + "/" + (this.mes + 1) + "/" + this.ano);
         } else {
             System.out.println("Fecha de mañana: " + (this.dia + 1) + "/" + this.mes + "/" + this.ano);
 
