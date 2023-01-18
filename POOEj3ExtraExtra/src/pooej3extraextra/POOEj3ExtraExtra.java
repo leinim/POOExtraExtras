@@ -48,7 +48,7 @@ public class POOEj3ExtraExtra {
         Pass p2 = new Pass(null, "Ana", 12345678);
         int opcion = 0;
         
-        do {
+        while (opcion != 6) {
         System.out.println("Menu");
         System.out.println("1 - Crear contraseña");
         System.out.println("2 - Nivel de contraseña");
@@ -57,27 +57,30 @@ public class POOEj3ExtraExtra {
         System.out.println("5 - Modificar dni");
         System.out.println("6 - Salir");
         opcion = leer.nextInt();
-        switch(opcion){
-            case 1:
-                p1.crearPass();
-                break;
-            case 2:
-                p1.analizarPass();
-                break;
-            case 3:
-                p1.modificarContraseña();
-                break;
-            case 4:
-                p1.modificarNombre();
-                break;
-            case 5:
-                p1.modificarDNI();
-                break;
-            default:
-                System.out.println("Opcion invalida.");
-        }
-        } while (opcion != 6 || opcion > 6 );
+            switch(opcion){
+                case 1:
+                    p1.crearPass();
+                    break;
+                case 2:
+                    p1.analizarPass();
+                    break;
+                case 3:
+                    p1.modificarContraseña();
+                    break;
+                case 4:
+                    p1.modificarNombre();
+                    break;
+                case 5:
+                    p1.modificarDNI();
+                    break;
+                default:
+                    System.out.println("Opcion invalida.");
+                    break;
+            }
+        } 
         
+        System.out.println(p1.toString());
+        System.out.println("Hasta pronto.");
     }
     
 }

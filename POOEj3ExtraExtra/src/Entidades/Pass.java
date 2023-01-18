@@ -73,7 +73,12 @@ public class Pass {
     public void setDni(int dni) {
         this.dni = dni;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Pass{" + "pass=" + pass + ", nombre=" + nombre + ", dni=" + dni + '}';
+    }
+            
     public void crearPass(){
         Scanner leer = new Scanner(System.in);
         System.out.println("Cree una contraseña de 10 caracteres");
@@ -113,7 +118,7 @@ public class Pass {
         System.out.println("Ingrese su contraseña");
         String contraseña = leer.next();
         
-        if (contraseña != this.pass){
+        if (!contraseña.equals(this.pass)){
             System.out.println("Contraseña incorrecta");
         } else {            
             System.out.println("Ingrese el nombre con su modificacion");
@@ -127,7 +132,7 @@ public class Pass {
         System.out.println("Ingrese su contraseña");
         String contraseña = leer.next();
         
-        if (contraseña != this.pass) {
+        if (!contraseña.equals(this.pass)) {
             System.out.println("Contraseña incorrecta");
         } else {
             System.out.println("Ingrese el dni modificado");
@@ -140,7 +145,7 @@ public class Pass {
         System.out.println("Ingrese su contraseña actual");
         String contraseña = leer.next();
         
-        if (contraseña != this.pass) {
+        if (!contraseña.equals(this.pass)) {
             System.out.println("Contraseña incorrecta");
         } else {   
             crearPass();
